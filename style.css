@@ -1,7 +1,5 @@
-
 /* ===== VARIÁVEIS ===== */
 :root {
-    /* Tema Escuro (padrão) */
     --bg-primary: #0a0a0f;
     --bg-secondary: #14141f;
     --bg-card: #1a1a2e;
@@ -81,12 +79,11 @@ body {
     text-decoration: none;
 }
 
-.logo-icon {
+.logo-icon-img {
     width: 36px;
     height: 36px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='12' fill='%234FC3F7'/%3E%3Crect x='12' y='12' width='10' height='10' fill='%238BC34A' rx='2'/%3E%3Crect x='26' y='12' width='10' height='10' fill='%238BC34A' rx='2'/%3E%3Crect x='40' y='12' width='10' height='10' fill='%238BC34A' rx='2'/%3E%3Crect x='12' y='26' width='10' height='10' fill='%238BC34A' rx='2'/%3E%3Crect x='26' y='26' width='10' height='10' fill='%238BC34A' rx='2'/%3E%3Crect x='40' y='26' width='10' height='10' fill='%238BC34A' rx='2'/%3E%3Crect x='12' y='40' width='10' height='10' fill='%238BC34A' rx='2'/%3E%3Crect x='26' y='40' width='10' height='10' fill='%238BC34A' rx='2'/%3E%3Crect x='40' y='40' width='10' height='10' fill='%238BC34A' rx='2'/%3E%3C/svg%3E");
-    background-size: contain;
-    background-repeat: no-repeat;
+    border-radius: 8px;
+    object-fit: contain;
     flex-shrink: 0;
 }
 
@@ -161,21 +158,33 @@ main {
     max-width: 720px;
 }
 
-/* ===== LOGO ===== */
+/* ===== LOGO PRINCIPAL COM ICON.PNG ===== */
 .logo-container {
     text-align: center;
     margin-bottom: 40px;
 }
 
-.logo-main {
-    display: inline-block;
-    width: 100%;
-    max-width: 480px;
+.logo-main-img {
+    width: 120px;
     height: 120px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 120'%3E%3Crect x='10' y='20' width='70' height='70' rx='12' fill='%234FC3F7' stroke='%23fff' stroke-width='2'/%3E%3Crect x='20' y='30' width='15' height='15' fill='%238BC34A' rx='2'/%3E%3Crect x='40' y='30' width='15' height='15' fill='%238BC34A' rx='2'/%3E%3Crect x='60' y='30' width='15' height='15' fill='%238BC34A' rx='2'/%3E%3Crect x='20' y='50' width='15' height='15' fill='%238BC34A' rx='2'/%3E%3Crect x='40' y='50' width='15' height='15' fill='%238BC34A' rx='2'/%3E%3Crect x='60' y='50' width='15' height='15' fill='%238BC34A' rx='2'/%3E%3Crect x='20' y='70' width='15' height='15' fill='%238BC34A' rx='2'/%3E%3Crect x='40' y='70' width='15' height='15' fill='%238BC34A' rx='2'/%3E%3Crect x='60' y='70' width='15' height='15' fill='%238BC34A' rx='2'/%3E%3Ctext x='100' y='48' font-family='Arial' font-size='34' font-weight='bold' fill='%234FC3F7'%3EMinecraft%3C/text%3E%3Ctext x='100' y='80' font-family='Arial' font-size='26' font-weight='300' fill='%23B0B0B0'%3ESearch%3C/text%3E%3C/svg%3E");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    border-radius: 24px;
+    object-fit: contain;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 30px rgba(79, 195, 247, 0.2);
+}
+
+.logo-title {
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+}
+
+.logo-subtitle {
+    font-size: 18px;
+    color: var(--text-secondary);
+    font-weight: 300;
 }
 
 /* ===== BUSCA ===== */
@@ -374,9 +383,17 @@ footer {
         font-size: 15px;
     }
 
-    .logo-main {
+    .logo-main-img {
+        width: 80px;
         height: 80px;
-        max-width: 320px;
+    }
+
+    .logo-title {
+        font-size: 30px;
+    }
+
+    .logo-subtitle {
+        font-size: 15px;
     }
 
     .logo-container {
@@ -426,14 +443,18 @@ footer {
         font-size: 13px;
     }
 
-    .logo-icon {
+    .logo-icon-img {
         width: 28px;
         height: 28px;
     }
 
-    .logo-main {
+    .logo-main-img {
+        width: 60px;
         height: 60px;
-        max-width: 240px;
+    }
+
+    .logo-title {
+        font-size: 24px;
     }
 
     #busca {
@@ -446,4 +467,4 @@ footer {
         height: 34px;
         font-size: 16px;
     }
-  }
+}
