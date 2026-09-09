@@ -1,4 +1,3 @@
-
 // ===== ELEMENTOS =====
 const busca = document.getElementById('busca');
 const resultados = document.getElementById('resultados');
@@ -26,28 +25,10 @@ themeIcon.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
 
 themeToggle.addEventListener('click', toggleTheme);
 
-// ===== FUNÇÃO DE BUSCA =====
+// ===== DADOS (VAZIO POR ENQUANTO) =====
 let dados = [];
 
-function carregarDados() {
-    fetch('results/results.json')
-        .then(response => {
-            if (!response.ok) throw new Error('Erro ao carregar dados');
-            return response.json();
-        })
-        .then(data => {
-            dados = data;
-        })
-        .catch(error => {
-            console.error('Erro:', error);
-            resultados.innerHTML = `
-                <div class="card" style="text-align:center;border-left-color:#ff6b6b;">
-                    <p style="color:#ff6b6b;">⚠️ Erro ao carregar dados. Tente novamente.</p>
-                </div>
-            `;
-        });
-}
-
+// ===== FUNÇÃO DE BUSCA =====
 function buscar(termo) {
     const termoLower = termo.toLowerCase().trim();
     
@@ -61,29 +42,13 @@ function buscar(termo) {
     clearBtn.classList.add('visible');
     mensagemInicial.style.display = 'none';
     
-    const filtrados = dados.filter(item => 
-        item.titulo.toLowerCase().includes(termoLower) ||
-        item.descricao.toLowerCase().includes(termoLower) ||
-        (item.categoria && item.categoria.toLowerCase().includes(termoLower))
-    );
-    
-    if (filtrados.length === 0) {
-        resultados.innerHTML = `
-            <div class="card" style="text-align:center;border-left-color:#ff6b6b;">
-                <p style="color:var(--text-secondary);">😕 Nenhum resultado encontrado para "<strong>${termo}</strong>"</p>
-                <small style="color:var(--text-muted);">Tente usar outras palavras</small>
-            </div>
-        `;
-        return;
-    }
-    
-    resultados.innerHTML = filtrados.map(item => `
-        <div class="card" onclick="window.location.href='${item.pagina || '#'}'">
-            <h3>${item.titulo}</h3>
-            <p>${item.descricao}</p>
-            ${item.categoria ? `<small>📂 ${item.categoria}</small>` : ''}
+    // SEM DADOS = MENSAGEM INFORMATIVA
+    resultados.innerHTML = `
+        <div class="card" style="text-align:center;border-left-color:#ff6b6b;">
+            <p style="color:var(--text-secondary);">📭 Nenhuma informação cadastrada ainda</p>
+            <small style="color:var(--text-muted);">Em breve adicionaremos dados do Minecraft!</small>
         </div>
-    `).join('');
+    `;
 }
 
 // ===== EVENTOS =====
@@ -104,6 +69,3 @@ clearBtn.addEventListener('click', function() {
     buscar('');
     busca.focus();
 });
-
-// ===== INICIALIZAR =====
-carregarDados();
