@@ -1,1 +1,449 @@
 
+/* ===== VARIÁVEIS ===== */
+:root {
+    /* Tema Escuro (padrão) */
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #14141f;
+    --bg-card: #1a1a2e;
+    --bg-input: #ffffff;
+    --bg-nav: rgba(10, 10, 15, 0.95);
+    --text-primary: #e8e8e8;
+    --text-secondary: #b0b0b0;
+    --text-muted: #666;
+    --text-input: #1a1a1a;
+    --border-color: #2a2a3e;
+    --accent: #4fc3f7;
+    --accent-hover: #ff6b6b;
+    --shadow: rgba(79, 195, 247, 0.15);
+    --card-hover: #1a274a;
+    --footer-bg: #050508;
+}
+
+[data-theme="light"] {
+    --bg-primary: #f0f2f5;
+    --bg-secondary: #ffffff;
+    --bg-card: #ffffff;
+    --bg-input: #f0f2f5;
+    --bg-nav: rgba(255, 255, 255, 0.95);
+    --text-primary: #1a1a2e;
+    --text-secondary: #333;
+    --text-muted: #888;
+    --text-input: #1a1a1a;
+    --border-color: #ddd;
+    --accent: #1a73e8;
+    --accent-hover: #e53935;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --card-hover: #e8f0fe;
+    --footer-bg: #e8e8e8;
+}
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg-nav);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    transition: background 0.4s ease, border-color 0.4s ease;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='12' fill='%234FC3F7'/%3E%3Crect x='12' y='12' width='10' height='10' fill='%238BC34A' rx='2'/%3E%3Crect x='26' y='12' width='10' height='10' fill='%238BC34A' rx='2'/%3E%3Crect x='40' y='12' width='10' height='10' fill='%238BC34A' rx='2'/%3E%3Crect x='12' y='26' width='10' height='10' fill='%238BC34A' rx='2'/%3E%3Crect x='26' y='26' width='10' height='10' fill='%238BC34A' rx='2'/%3E%3Crect x='40' y='26' width='10' height='10' fill='%238BC34A' rx='2'/%3E%3Crect x='12' y='40' width='10' height='10' fill='%238BC34A' rx='2'/%3E%3Crect x='26' y='40' width='10' height='10' fill='%238BC34A' rx='2'/%3E%3Crect x='40' y='40' width='10' height='10' fill='%238BC34A' rx='2'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+}
+
+.nav-brand {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    transition: color 0.3s;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.theme-toggle {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    transition: all 0.3s;
+    color: var(--text-primary);
+}
+
+.theme-toggle:hover {
+    transform: rotate(20deg);
+    border-color: var(--accent);
+}
+
+.github-link {
+    color: var(--text-secondary);
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.github-link:hover {
+    color: var(--text-primary);
+}
+
+/* ===== AVISO LEGAL ===== */
+.aviso-legal {
+    background: var(--bg-secondary);
+    color: #ff6b6b;
+    text-align: center;
+    padding: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--border-color);
+    transition: background 0.3s;
+}
+
+/* ===== MAIN ===== */
+main {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 20px 60px;
+}
+
+.container {
+    width: 100%;
+    max-width: 720px;
+}
+
+/* ===== LOGO ===== */
+.logo-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo-main {
+    display: inline-block;
+    width: 100%;
+    max-width: 480px;
+    height: 120px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 120'%3E%3Crect x='10' y='20' width='70' height='70' rx='12' fill='%234FC3F7' stroke='%23fff' stroke-width='2'/%3E%3Crect x='20' y='30' width='15' height='15' fill='%238BC34A' rx='2'/%3E%3Crect x='40' y='30' width='15' height='15' fill='%238BC34A' rx='2'/%3E%3Crect x='60' y='30' width='15' height='15' fill='%238BC34A' rx='2'/%3E%3Crect x='20' y='50' width='15' height='15' fill='%238BC34A' rx='2'/%3E%3Crect x='40' y='50' width='15' height='15' fill='%238BC34A' rx='2'/%3E%3Crect x='60' y='50' width='15' height='15' fill='%238BC34A' rx='2'/%3E%3Crect x='20' y='70' width='15' height='15' fill='%238BC34A' rx='2'/%3E%3Crect x='40' y='70' width='15' height='15' fill='%238BC34A' rx='2'/%3E%3Crect x='60' y='70' width='15' height='15' fill='%238BC34A' rx='2'/%3E%3Ctext x='100' y='48' font-family='Arial' font-size='34' font-weight='bold' fill='%234FC3F7'%3EMinecraft%3C/text%3E%3Ctext x='100' y='80' font-family='Arial' font-size='26' font-weight='300' fill='%23B0B0B0'%3ESearch%3C/text%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* ===== BUSCA ===== */
+.search-container {
+    width: 100%;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--bg-input);
+    border-radius: 50px;
+    box-shadow: 0 2px 20px var(--shadow);
+    transition: all 0.3s;
+}
+
+.input-wrapper:hover {
+    box-shadow: 0 4px 30px var(--shadow);
+}
+
+.input-wrapper:focus-within {
+    box-shadow: 0 4px 40px var(--shadow);
+    transform: scale(1.01);
+}
+
+.search-icon {
+    position: absolute;
+    left: 20px;
+    width: 22px;
+    height: 22px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+#busca {
+    width: 100%;
+    padding: 16px 50px 16px 56px;
+    font-size: 16px;
+    border: none;
+    border-radius: 50px;
+    background: transparent;
+    color: var(--text-input);
+    outline: none;
+    font-weight: 400;
+}
+
+#busca::placeholder {
+    color: var(--text-muted);
+    font-weight: 300;
+}
+
+.clear-btn {
+    position: absolute;
+    right: 16px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 18px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 50%;
+    display: none;
+    transition: all 0.3s;
+}
+
+.clear-btn:hover {
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+}
+
+.clear-btn.visible {
+    display: block;
+}
+
+/* ===== MENSAGEM INICIAL ===== */
+.mensagem-inicial {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.empty-state {
+    padding: 40px 20px;
+}
+
+.empty-icon {
+    font-size: 56px;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.empty-state p {
+    font-size: 20px;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+}
+
+.empty-state small {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+/* ===== RESULTADOS ===== */
+#resultados {
+    margin-top: 24px;
+}
+
+.card {
+    background: var(--bg-card);
+    padding: 18px 24px;
+    margin: 10px 0;
+    border-radius: 14px;
+    border-left: 4px solid var(--accent);
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.card:hover {
+    background: var(--card-hover);
+    transform: translateX(8px);
+    border-left-color: var(--accent-hover);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    color: var(--accent);
+    font-size: 19px;
+    margin-bottom: 4px;
+}
+
+.card p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.card small {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+    background: var(--footer-bg);
+    border-top: 1px solid var(--border-color);
+    padding: 20px;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.footer-content p {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.footer-content strong {
+    color: var(--text-secondary);
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 600px) {
+    .nav-container {
+        padding: 10px 16px;
+    }
+
+    .nav-brand {
+        font-size: 15px;
+    }
+
+    .logo-main {
+        height: 80px;
+        max-width: 320px;
+    }
+
+    .logo-container {
+        margin-bottom: 28px;
+    }
+
+    #busca {
+        font-size: 15px;
+        padding: 14px 44px 14px 50px;
+    }
+
+    .search-icon {
+        left: 16px;
+        width: 18px;
+        height: 18px;
+    }
+
+    .clear-btn {
+        right: 12px;
+        font-size: 16px;
+    }
+
+    .card {
+        padding: 14px 18px;
+    }
+
+    .card h3 {
+        font-size: 17px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .empty-state p {
+        font-size: 17px;
+    }
+
+    .empty-icon {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 400px) {
+    .nav-brand {
+        font-size: 13px;
+    }
+
+    .logo-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .logo-main {
+        height: 60px;
+        max-width: 240px;
+    }
+
+    #busca {
+        font-size: 14px;
+        padding: 12px 40px 12px 44px;
+    }
+
+    .theme-toggle {
+        width: 34px;
+        height: 34px;
+        font-size: 16px;
+    }
+  }
