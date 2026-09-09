@@ -1,1 +1,51 @@
-
+[
+    {
+        "id": "diamante",
+        "titulo": "💎 Diamante",
+        "descricao": "Minério valioso encontrado no nível Y -59",
+        "categoria": "Minérios",
+        "pagina": "#"
+    },
+    {
+        "id": "creeper",
+        "titulo": "💥 Creeper",
+        "descricao": "Mob que explode ao se aproximar do jogador",
+        "categoria": "Mobs",
+        "pagina": "#"
+    },
+    {
+        "id": "nether",
+        "titulo": "🔥 Nether",
+        "descricao": "Dimensão infernal com lava e mobs perigosos",
+        "categoria": "Dimensões",
+        "pagina": "#"
+    },
+    {
+        "id": "redstone",
+        "titulo": "⚡ Redstone",
+        "descricao": "Pó vermelho usado para criar circuitos e mecanismos",
+        "categoria": "Itens",
+        "pagina": "#"
+    },
+    {
+        "id": "enderdragon",
+        "titulo": "🐉 Ender Dragon",
+        "descricao": "Chefe final do jogo, encontrado no End",
+        "categoria": "Mobs",
+        "pagina": "#"
+    },
+    {
+        "id": "aldeao",
+        "titulo": "🧑‍🌾 Aldeão",
+        "descricao": "NPC que negocia itens com esmeraldas",
+        "categoria": "NPCs",
+        "pagina": "#"
+    },
+    {
+        "id": "enderpearl",
+        "titulo": "🌀 Pérola do End",
+        "descricao": "Item que te teleporta quando arremessado",
+        "categoria": "Itens",
+        "pagina": "#"
+    }
+]
